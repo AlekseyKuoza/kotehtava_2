@@ -2,7 +2,7 @@
 
 ## Alkutilanne  
 
-lähde...http://terokarvinen.com/2017/aikataulu-%e2%80%93-palvelinten-hallinta-ict4tn022-2-%e2%80%93-5-op-uusi-ops-loppukevat-2017-p2
+lähde...http://terokarvinen.com/2017/aikataulu-%e2%80%93-palvelinten-hallinta-ict4tn022-2-%e2%80%93-5-op-uusi-ops-loppukevat-2017-p2  
 työympäristö...  
 toimeksianto...  
 
@@ -24,7 +24,7 @@ Terminali-paneelissa ajasin seuraavat komennot:
 $ sudo apt-get update - päivitin systeemin.  
 $ setxkbmap fi - muutin näppäimistön asetukset suomen kieleseksi.  
 $ sudo apt-get install git - asensin git moduuli.  
-$ git config --global user.email aleksey.kuoza@gmail.com  
+$ git config --global user.email "e-mail osoite"  
 $ git config --global user.name Aleksey Kuoza - laitoin gitin alkuasetukset.  
 $ get clone https://github.com/AlekseyKuoza/kotitehtava_2.git - kirjauduin arkistoon.  
 $ cd kotitehtava_2/ - menin kansioon.  
