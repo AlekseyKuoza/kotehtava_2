@@ -50,15 +50,15 @@ Joten menin katsomaan, kuinka minun ystäväni Ville Kauppinen on onnistunut tee
 
 Niin päätin tehdä perässä saman moduulin... 
 
-$ cd /etc/puppet/modules - menin modules-kanssioon. 
-$ sudo mkdir xcolors - loin uuden moduulin. 
-$ cd xcolors - 
-$ sudo mkdir manifests - 
-$ sudo mkdir templates - 
-$ cd manifests - laitoin kuntoon perus asetukset. 
-$ sudoedit init.pp - loin init.pp-tiedoston. 
+$ cd /etc/puppet/modules - menin modules-kanssioon.   
+$ sudo mkdir xcolors - loin uuden moduulin.    
+$ cd xcolors -   
+$ sudo mkdir manifests -   
+$ sudo mkdir templates -   
+$ cd manifests - laitoin kuntoon perus asetukset.   
+$ sudoedit init.pp - loin init.pp-tiedoston.   
 
-ja kirjoitin siihen seuraavan koodin  
+ja kirjoitin siihen seuraavan koodin    
 class xcolors {
         file { '/etc/X11/app-defaults/XTerm-color':
                 content => template('xcolors/XTerm-color.erb')
