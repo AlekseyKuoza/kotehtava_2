@@ -37,8 +37,37 @@ $ git push - suiritin komennot ja sitten tarkistin, että tiedosto näkyy github
 ## Puupet asentaminen
 
 $ sudo apt-get -y install puppet - asensin puppet-moduulin.  
-$ ...  
 
+Tässä vaiheessa menin jumiin, sillä en valitettavasti ymmärtänyt toimeksiantoa... mitä se "moduuli, joka tekee asetukset jollekin komentorivi- tai graafisen käyttöliittymän ohjelmalle" - mahtaisi tarkoittaa..... 
+
+Joten menin katsomaan, kuinka minun ystäväni Ville Kauppinen on onnistunut teekemään tämän tehtävän.... Häneltä (niin kuin melkein aina) löytyi selkeä ja johdonmumkainen ratkaisu. Tässä on linkki hänen kotitehtävään https://github.com/ibiuman/puppetalias/blob/master/README.md   
+
+Niin päätin tehdä perässä saman moduulin... 
+
+$ cd /etc/puppet/modules - menin modules-kanssioon. 
+$ sudo mkdir xcolors - loin uuden moduulin. 
+$ cd xcolors - 
+$ sudo mkdir manifests - 
+$ sudo mkdir templates - 
+$ cd manifests - laitoin kuntoon perus asetukset. 
+$ sudoedit init.pp - loin init.pp-tiedoston. 
+
+ja kirjoitin siihen seuraavan koodin  
+class xcolors {
+        file { '/etc/X11/app-defaults/XTerm-color':
+                content => template('xcolors/XTerm-color.erb')
+        }
+}
+
+$ sudo cp /etc/X11/app-defaults/XTerm-color /etc/puppet/modules/xcolors/templates/XTerm-color.erb  - elikä, kopioin XTerm-color-tiedoston minun puppetin moduuliini, samalla muutin sen nimen. 
+
+$ sudoedit XTerm-color.erb - muokkasin sen sisältöä, "background and foreground colors" 
+
+$ sudo puppet apply -e 'file {"xtermcolors":}' - ajoin komennon.
+
+mutta ei se kuitenkaan toiminut.... lopputulos näytti seuraavalta:  
+
+Screenshot_2017-04-11_10-14-02
 
 
 
